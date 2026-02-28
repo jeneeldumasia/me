@@ -43,11 +43,14 @@ export const About: React.FC = () => {
                             marginBottom: '10vh'
                         }}
                     >
-                        Hi, I'm Jeneel <br /><br />
-                        Computer Science student at P. P. Savani University, Surat — and a DevOps Intern at IAMOPS.<br /><br />
-                        I'm curious about how systems actually work beneath the surface — what keeps them stable, why they fail, how everything connects. That curiosity led me to Linux, networking, cloud infrastructure, and system design, and it's what keeps me going deeper every day.<br /><br />
-                        At IAMOPS I get to work alongside people who've been doing this for years, which has taught me more about production environments than any course could.<br /><br />
-                        I focus on fundamentals over trends. Still learning — and I think that's a feature, not a bug.
+                        Hi, I’m Jeneel.
+                        Computer Science student at P. P. Savani University, Surat — and DevOps Intern at IAMOPS.
+
+                        I’m passionate about how systems work under the hood — Linux, networking, cloud infrastructure, and system design.
+
+                        At IAMOPS, I work on real production environments and focus on strong fundamentals over trends.
+
+                        Still learning. Always improving.
                     </p>
                     <a
                         href="/Jeneel_Dumasia_resume.pdf"
