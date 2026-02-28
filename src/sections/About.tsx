@@ -46,7 +46,7 @@ export const About: React.FC = () => {
                         Hi, I’m Jeneel.<br></br>
                         Computer Science student at P. P. Savani University, Surat — and DevOps Intern at IAMOPS.<br></br>
                         I’m passionate about how systems work under the hood — Linux, networking, cloud infrastructure, and system design.<br></br>
-                        At IAMOPS, I’m part of the NOC team, learning client infrastructures, monitoring systems, and understanding how production environments operate at scale.<br></br>
+                        At IAMOPS, I’m part of the NOC team, gaining hands-on exposure to client infrastructure and system monitoring.<br></br>
                         Still learning. Always improving.
                     </p>
                     <a
