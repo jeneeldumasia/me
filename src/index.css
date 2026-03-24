@@ -163,3 +163,60 @@ h6 {
 }
 
 /* Custom Cursor Styles will be handled in JS/inline, but base hidden above */
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .grid-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  /* Make sure children take full width when grid becomes flex */
+  .grid-layout > div {
+    width: 100% !important;
+  }
+  
+  .project-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 2.5rem var(--pad-page) !important;
+  }
+  
+  .skill-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 2.5rem var(--pad-page) !important;
+  }
+
+  .text-huge {
+    font-size: clamp(3.5rem, 16vw, 6rem) !important;
+  }
+
+  .text-large {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+  
+  .text-medium {
+    font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
+  }
+  
+  .hero-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+  }
+
+  .contact-links {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  
+  .contact-footer {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+}
