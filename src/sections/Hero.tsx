@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
                     </div>
                 </div>
 
-                <footer style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', width: '100%', zIndex: 20 }}>
+                <footer className="hero-footer" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', width: '100%', zIndex: 20 }}>
                     <div className="text-small">
                         <a href="https://github.com/jeneeldumasia" target="_blank" rel="noreferrer" className="magnetic">GITHUB</a>
                         <span style={{ margin: '0 1rem' }}>/</span>

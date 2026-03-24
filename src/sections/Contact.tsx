@@ -33,7 +33,7 @@ export const Contact: React.FC = () => {
                     </a>
                 </Magnetic>
 
-                <div style={{ display: 'flex', gap: '3rem', color: 'var(--text-muted)' }}>
+                <div className="contact-links" style={{ display: 'flex', gap: '3rem', color: 'var(--text-muted)' }}>
                     <Magnetic>
                         <a href="tel:+918160025176" className="text-small" style={{ color: 'inherit' }}>+91 8160025176</a>
                     </Magnetic>
@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
                 </div>
             </div>
 
-            <footer style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem' }}>
+            <footer className="contact-footer" style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem' }}>
                 <div className="text-small">© {new Date().getFullYear()} JENEEL DUMASIA</div>
                 <div className="text-small">SURAT, GUJARAT, INDIA</div>
             </footer>
