@@ -13,11 +13,12 @@ export const Contact: React.FC = () => {
                         className="text-medium"
                         style={{
                             display: 'inline-block',
-                            padding: '1rem 3rem',
+                            padding: 'clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 5vw, 3rem)',
                             border: '1px solid rgba(255,255,255,0.2)',
                             borderRadius: '50px',
                             fontFamily: 'var(--font-sans)',
                             marginBottom: '4rem',
+                            wordBreak: 'break-word',
                             transition: 'all 0.3s ease'
                         }}
                         onMouseEnter={(e) => {

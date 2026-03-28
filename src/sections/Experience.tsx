@@ -54,9 +54,8 @@ export const Experience: React.FC = () => {
 
                 {/* Text Content */}
                 <div style={{ gridColumn: '1 / 8' }}>
-                    <h3 className="text-large" style={{
+                    <h3 className="text-large experience-title" style={{
                         marginBottom: '1rem',
-                        whiteSpace: 'nowrap',
                         fontSize: 'clamp(1.2rem, 2.8vw, 3.2rem)', // Adjusted to prevent collision with the diagram
                     }}>IAMOPS — Cloud & DevOps Intern</h3>
                     <div className="text-medium" style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
