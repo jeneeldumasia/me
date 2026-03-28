@@ -57,6 +57,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
@@ -220,7 +222,8 @@ h6 {
   }
 
   .text-huge {
-    font-size: clamp(3.5rem, 16vw, 6rem) !important;
+    font-size: clamp(2.5rem, 12vw, 5rem) !important;
+    letter-spacing: -0.05em;
   }
 
   .text-large {
