@@ -35,9 +35,6 @@ export const Contact: React.FC = () => {
 
                 <div className="contact-links" style={{ display: 'flex', gap: '3rem', color: 'var(--text-muted)' }}>
                     <Magnetic>
-                        <a href="tel:+918160025176" className="text-small" style={{ color: 'inherit' }}>+91 8160025176</a>
-                    </Magnetic>
-                    <Magnetic>
                         <a href="https://github.com/jeneeldumasia" target="_blank" rel="noreferrer" className="text-small" style={{ color: 'inherit' }}>GITHUB</a>
                     </Magnetic>
                     <Magnetic>

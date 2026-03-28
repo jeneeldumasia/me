@@ -40,31 +40,50 @@ export const Experience: React.FC = () => {
             <div className="grid-layout" style={{ padding: '0 var(--pad-page)', alignItems: 'center' }}>
 
                 {/* Text Content */}
-                <div style={{ gridColumn: '1 / 6' }}>
-                    <h3 className="text-large" style={{ marginBottom: '1rem' }}>IAMOPS</h3>
+                <div style={{ gridColumn: '1 / 8' }}>
+                    <h3 className="text-large" style={{ 
+                        marginBottom: '1rem', 
+                        whiteSpace: 'nowrap',
+                        fontSize: 'clamp(1.2rem, 2.8vw, 3.2rem)', // Adjusted to prevent collision with the diagram
+                    }}>IAMOPS — Cloud & DevOps Intern</h3>
                     <div className="text-medium" style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
-                        Technical Intern <br />
-                        <span className="text-small">JAN 2026 – PRESENT · SURAT, GUJARAT</span>
+                        Jan 2026 – Present · Surat, Gujarat
                     </div>
 
                     <ul style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '1.5rem', opacity: 0.8 }}>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Deployed a secure 3-tier application architecture on AWS — app components in private subnets, Application Load Balancer in public subnet.
+                            Built a non-production 3-tier cloud architecture, implementing network isolation and load balancing to simulate a high-availability system design.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Worked extensively with EC2, ECS, S3, VPC, Route 53, EFS, and AWS Cost Explorer.
+                            Currently deep diving into AWS services, gaining hands-on experience with cloud infrastructure, networking, and cost optimization.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Hands-on experience in cloud networking, high availability design, and cost monitoring/optimization.
+                            Designed a multi-location network architecture (2 branches + HQ) as part of a structured task with IP planning and subnet segmentation, and performed DevOps-focused infrastructure analysis on real-world companies to identify scalability challenges and map potential deployment patterns.
+                        </li>
+                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
+                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
+                            Ranked among Top 10 interns (out of batch) and selected to transition into NOC operations.
+                        </li>
+                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
+                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
+                            Acted as a Secondary responder in incident management, supporting real-time monitoring, alert triaging, and escalation workflows in production environments.
+                        </li>
+                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
+                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
+                            Contributed to shift handovers and operational continuity, ensuring clear communication of system status, incidents, and ongoing actions.
+                        </li>
+                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
+                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
+                            Gained exposure to production systems, observability practices, and reliability engineering workflows
                         </li>
                     </ul>
                 </div>
 
                 {/* 3-Tier Architecture Visualization */}
-                <div style={{ gridColumn: '7 / 13', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ gridColumn: '8 / 13', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <svg
                         ref={svgRef}
                         viewBox="0 0 500 500"
