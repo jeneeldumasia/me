@@ -48,7 +48,7 @@ const App: React.FC = () => {
             {!loadingComplete && <Loader onComplete={() => setLoadingComplete(true)} />}
 
             <div id="webgl-container" style={{ opacity: loadingComplete ? 1 : 0, transition: 'opacity 2s ease' }}>
-                {loadingComplete && <Scene />}
+                <Scene />
             </div>
 
             <main style={{ position: 'relative', zIndex: 10, visibility: loadingComplete ? 'visible' : 'hidden' }}>

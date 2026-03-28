@@ -1,34 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
 
 export const Loader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
-    const [progress, setProgress] = useState(0);
+    const [index, setIndex] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLHeadingElement>(null);
+
+    const greetings = [
+        "Hello",
+        "Bonjour",
+        "Hola",
+        "Ciao",
+        "こんにちは",
+        "नमस्ते",
+        "Jeneel Dumasia"
+    ];
 
     useEffect(() => {
-        let currentProgress = 0;
-        const interval = setInterval(() => {
-            currentProgress += Math.floor(Math.random() * 15) + 5;
-            if (currentProgress >= 100) {
-                currentProgress = 100;
-                clearInterval(interval);
+        if (index === greetings.length - 1) {
+            // End of sequence, wait a bit on the name then animate out
+            if (textRef.current) {
+                gsap.to(textRef.current, { opacity: 1, duration: 0.6, ease: 'power2.out' });
+            }
 
-                // Trigger exit animation
+            setTimeout(() => {
                 if (containerRef.current) {
                     gsap.to(containerRef.current, {
                         yPercent: -100,
-                        duration: 1.2,
+                        duration: 1.0,
                         ease: 'expo.inOut',
-                        delay: 0.5,
                         onComplete
                     });
                 }
-            }
-            setProgress(currentProgress);
-        }, 150);
+            }, 900); // stay on final text for 0.9s
+            return;
+        }
 
-        return () => clearInterval(interval);
-    }, [onComplete]);
+        // Cycle through greetings
+        if (textRef.current) {
+            const tl = gsap.timeline();
+            tl.to(textRef.current, { opacity: 1, duration: 0.2 })
+              .to(textRef.current, { opacity: 0, duration: 0.2, delay: 0.15, onComplete: () => {
+                  setIndex(prev => prev + 1);
+              }});
+        }
+    }, [index, onComplete, greetings.length]);
 
     return (
         <div
@@ -39,24 +55,28 @@ export const Loader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => 
                 backgroundColor: 'var(--bg-color)',
                 zIndex: 50,
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-end',
-                padding: 'var(--pad-page)',
-                color: 'var(--text-main)'
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: 'var(--text-main)',
+                overflow: 'hidden'
             }}
         >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                <h1 className="text-large" style={{ margin: 0 }}>JENEEL DUMASIA</h1>
-                <div style={{ fontSize: '2rem', fontFamily: 'var(--font-display)', fontWeight: 700 }}>
-                    {progress}%
-                </div>
-            </div>
-            <div style={{ width: '100%', height: '2px', backgroundColor: 'var(--grid-line)', marginTop: '2rem' }}>
-                <div style={{ width: `${progress}%`, height: '100%', backgroundColor: 'var(--text-main)', transition: 'width 0.2s ease-out' }} />
-            </div>
+            <h1 
+               ref={textRef} 
+               style={{ 
+                   opacity: 0, 
+                   fontFamily: index === greetings.length - 1 ? 'var(--font-display)' : 'var(--font-sans)',
+                   fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+                   fontWeight: index === greetings.length - 1 ? 700 : 400,
+                   display: 'flex',
+                   alignItems: 'center',
+                   gap: '12px'
+               }}
+            >
+                {/* Optional dot indicator like Apple occasionally pairs with language changes */}
+                {index < greetings.length - 1 && <span style={{display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--text-main)'}}></span>}
+                {greetings[index]}
+            </h1>
         </div>
     );
 };
-
-// Quick fix for useRef not imported correctly above
-import { useRef } from 'react';

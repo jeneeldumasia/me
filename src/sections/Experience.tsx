@@ -11,22 +11,35 @@ export const Experience: React.FC = () => {
     useEffect(() => {
         if (!containerRef.current || !svgRef.current) return;
 
-        const paths = svgRef.current.querySelectorAll('path, line, rect');
+        const elements = svgRef.current.querySelectorAll('path, line, rect, circle');
 
-        // Set initial state
-        gsap.set(paths, { strokeDasharray: 1000, strokeDashoffset: 1000, opacity: 0 });
+        // Set initial states by dynamically calculating the length of each shape
+        elements.forEach((node) => {
+            const el = node as SVGGeometryElement;
+            if (el.hasAttribute('stroke-dasharray') || !el.getTotalLength) {
+                // If the element is purposely dashed (like the VPC barrier) or doesn't support getTotalLength, just prepare it to fade in
+                gsap.set(el, { opacity: 0 });
+            } else {
+                // Set the exact stroke dash length to the perimeter of the shape
+                const length = el.getTotalLength() + 5; 
+                gsap.set(el, { strokeDasharray: length, strokeDashoffset: length, opacity: 0 });
+            }
+        });
 
-        ScrollTrigger.create({
-            trigger: containerRef.current,
-            start: 'top center',
-            onEnter: () => {
-                gsap.to(paths, {
-                    strokeDashoffset: 0,
-                    opacity: 1,
-                    duration: 2,
-                    ease: 'power2.inOut',
-                    stagger: 0.1
-                });
+        // Animate everything precisely on scroll
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: 'top center',
+            }
+        });
+
+        elements.forEach((node) => {
+            const el = node as SVGGeometryElement;
+            if (el.hasAttribute('stroke-dasharray') || !el.getTotalLength) {
+                tl.to(el, { opacity: 1, duration: 0.5 }, "<0.05");
+            } else {
+                tl.to(el, { strokeDashoffset: 0, opacity: 1, duration: 1, ease: 'power2.inOut' }, "<0.05");
             }
         });
     }, []);
@@ -41,8 +54,8 @@ export const Experience: React.FC = () => {
 
                 {/* Text Content */}
                 <div style={{ gridColumn: '1 / 8' }}>
-                    <h3 className="text-large" style={{ 
-                        marginBottom: '1rem', 
+                    <h3 className="text-large" style={{
+                        marginBottom: '1rem',
                         whiteSpace: 'nowrap',
                         fontSize: 'clamp(1.2rem, 2.8vw, 3.2rem)', // Adjusted to prevent collision with the diagram
                     }}>IAMOPS — Cloud & DevOps Intern</h3>
