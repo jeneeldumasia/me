@@ -13,11 +13,12 @@ export const Contact: React.FC = () => {
                         className="text-medium"
                         style={{
                             display: 'inline-block',
-                            padding: '1rem 3rem',
+                            padding: 'clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 5vw, 3rem)',
                             border: '1px solid rgba(255,255,255,0.2)',
                             borderRadius: '50px',
                             fontFamily: 'var(--font-sans)',
                             marginBottom: '4rem',
+                            wordBreak: 'break-word',
                             transition: 'all 0.3s ease'
                         }}
                         onMouseEnter={(e) => {
@@ -34,9 +35,6 @@ export const Contact: React.FC = () => {
                 </Magnetic>
 
                 <div className="contact-links" style={{ display: 'flex', gap: '3rem', color: 'var(--text-muted)' }}>
-                    <Magnetic>
-                        <a href="tel:+918160025176" className="text-small" style={{ color: 'inherit' }}>+91 8160025176</a>
-                    </Magnetic>
                     <Magnetic>
                         <a href="https://github.com/jeneeldumasia" target="_blank" rel="noreferrer" className="text-small" style={{ color: 'inherit' }}>GITHUB</a>
                     </Magnetic>

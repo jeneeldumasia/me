@@ -5,6 +5,7 @@ import { CustomCursor } from './components/CustomCursor';
 import { SmoothScroll } from './components/SmoothScroll';
 import { Loader } from './components/Loader';
 import { Scene } from './components/Scene';
+import { ThemeToggle } from './components/ThemeToggle';
 
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
@@ -43,10 +44,11 @@ const App: React.FC = () => {
     return (
         <SmoothScroll>
             <CustomCursor />
+            <ThemeToggle />
             {!loadingComplete && <Loader onComplete={() => setLoadingComplete(true)} />}
 
             <div id="webgl-container" style={{ opacity: loadingComplete ? 1 : 0, transition: 'opacity 2s ease' }}>
-                {loadingComplete && <Scene />}
+                <Scene />
             </div>
 
             <main style={{ position: 'relative', zIndex: 10, visibility: loadingComplete ? 'visible' : 'hidden' }}>

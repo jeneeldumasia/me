@@ -22,6 +22,16 @@
   --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --pad-page: 2rem;
+  --overlay-bg: rgba(10, 10, 10, 0.1);
+}
+
+[data-theme='light'] {
+  --bg-color: #f0f0f0;
+  --text-main: #0a0a0a;
+  --text-muted: #555555;
+  --accent: #000000;
+  --grid-line: rgba(0, 0, 0, 0.05);
+  --overlay-bg: rgba(240, 240, 240, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -41,15 +51,24 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 50px 50px;
   background-position: center top;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Custom Selection */
@@ -86,10 +105,21 @@ h6 {
   pointer-events: none;
 }
 
+#webgl-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-bg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
 /* Page Layout */
 .section {
-  min-height: 100vh;
-  width: 100vw;
+  min-height: 100dvh;
+  width: 100%;
   padding: var(--pad-page);
   display: flex;
   flex-direction: column;
@@ -171,19 +201,19 @@ h6 {
     flex-direction: column !important;
     gap: 2rem !important;
   }
-  
+
   /* Make sure children take full width when grid becomes flex */
-  .grid-layout > div {
+  .grid-layout>div {
     width: 100% !important;
   }
-  
+
   .project-card {
     display: flex !important;
     flex-direction: column !important;
     gap: 1.5rem !important;
     padding: 2.5rem var(--pad-page) !important;
   }
-  
+
   .skill-row {
     display: flex !important;
     flex-direction: column !important;
@@ -192,17 +222,18 @@ h6 {
   }
 
   .text-huge {
-    font-size: clamp(3.5rem, 16vw, 6rem) !important;
+    font-size: clamp(2.5rem, 12vw, 5rem) !important;
+    letter-spacing: -0.05em;
   }
 
   .text-large {
     font-size: clamp(2rem, 8vw, 3rem) !important;
   }
-  
+
   .text-medium {
     font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
   }
-  
+
   .hero-footer {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -213,7 +244,7 @@ h6 {
     flex-direction: column !important;
     gap: 1.5rem !important;
   }
-  
+
   .contact-footer {
     flex-direction: column !important;
     align-items: center !important;

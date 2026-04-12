@@ -8,11 +8,11 @@ export const AbstractObject = () => {
 
     // Refined brutalist color palette: concrete, charcoal, off-white
     const materialProps = {
-        color: '#333333',
-        roughness: 0.1,
-        metalness: 0.8,
+        color: '#1a1a1a', // Darker base color
+        roughness: 0.3,   // More matte/concrete feel
+        metalness: 0.5,   // Less reflective
         distort: 0.4,
-        speed: 1.5,
+        speed: 1.0,       // Slightly slower movement
     };
 
     useFrame((state) => {
