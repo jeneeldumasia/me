@@ -12,7 +12,7 @@ export const About: React.FC = () => {
         if (!containerRef.current || !textRef.current) return;
 
         // Simple opacity fade-in instead of buggy word-by-word split which breaks <br/> tags
-        gsap.fromTo([textRef.current, '#download-resume'],
+        gsap.fromTo([textRef.current, '#view-resume', '#download-resume'],
             { opacity: 0, y: 50 },
             {
                 opacity: 1,
@@ -48,19 +48,34 @@ export const About: React.FC = () => {
                         I'm passionate about Linux, networking, cloud infrastructure, observability, and distributed systems. At IAMOPS, I work in the NOC, monitoring production environments, responding to incidents, and supporting reliable infrastructure for client systems.<br></br><br></br>
                         I'm always looking to deepen my understanding of how large-scale systems are built, operated, and kept reliable.
                     </p>
-                    <a
-                        href="/Jeneel_Dumasia_resume.pdf"
-                        download="Jeneel_Dumasia_resume.pdf"
-                        className="btn-primary"
-                        style={{ opacity: 0 }} /* Initial state for GSAP */
-                        id="download-resume"
-                    >
-                        Download Resume
-                        <svg className="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 15V3M12 15L8 11M12 15L16 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M2 17L2.42105 19.6667C2.42105 19.6667 2.42105 21 3.52632 21H20.4737C21.5789 21 21.5789 19.6667 21.5789 19.6667L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </a>
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                        <a
+                            href="/Jeneel_Dumasia_resume.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn-primary"
+                            style={{ opacity: 0 }}
+                            id="view-resume"
+                        >
+                            View Resume
+                            <svg className="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </a>
+                        <a
+                            href="/Jeneel_Dumasia_resume.pdf"
+                            download="Jeneel_Dumasia_resume.pdf"
+                            className="btn-primary"
+                            style={{ opacity: 0 }}
+                            id="download-resume"
+                        >
+                            Download Resume
+                            <svg className="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 15V3M12 15L8 11M12 15L16 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M2 17L2.42105 19.6667C2.42105 19.6667 2.42105 21 3.52632 21H20.4737C21.5789 21 21.5789 19.6667 21.5789 19.6667L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
