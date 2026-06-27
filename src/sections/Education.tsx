@@ -45,6 +45,17 @@ export const Education: React.FC = () => {
                     <div className="text-small edu-animate" style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
                         CGPA: 7.32
                     </div>
+
+                    <ul className="edu-animate" style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', opacity: 0.8 }}>
+                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
+                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
+                            Won a 35k grant for the EyesOnWheels project.
+                        </li>
+                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
+                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
+                            Cloud Lead for GDSC-PPSU (2023-24) — Mentored club members through the Google Cloud Arcade program, helping them learn foundational cloud concepts and complete hands-on labs.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
