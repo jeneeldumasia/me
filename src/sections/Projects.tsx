@@ -7,18 +7,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
     {
+        title: 'SHIPZEN',
+        subtitle: 'SELF-HOSTED DEPLOYMENT PLATFORM',
+        description: 'Turns any GitHub repository into a live Kubernetes deployment. Custom reconciliation loop handles container builds, pod scheduling, and autoscaling — with real-time build logs and environment variable management through a unified dashboard.',
+        stack: ['Next.js', 'Python', 'Kubernetes', 'Redis', 'Docker'],
+        year: '2026'
+    },
+    {
         title: 'EYES ON WHEELS',
         subtitle: 'REAL-TIME DROWSINESS DETECTION',
         description: <>ML on Raspberry Pi 4 tracking eye-blink patterns and facial expressions to prevent accidents. The project received an approved <a href="/EYESONWHEELS_PATENT.pdf#toolbar=0" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-muted)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>patent</a>.</>,
         stack: ['Python', 'OpenCV', 'NumPy', 'SciPy'],
         year: '2025'
-    },
-    {
-        title: 'STOCKWISE',
-        subtitle: 'STORAGE MANAGEMENT PLATFORM',
-        description: 'Inventory tracking, automated billing, invoicing, client management, and data visualization.',
-        stack: ['JavaScript', 'HTML/CSS', 'MongoDB', 'NodeJS', 'Express'],
-        year: '2024'
     }
 ];
 
