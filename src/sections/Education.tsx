@@ -49,7 +49,7 @@ export const Education: React.FC = () => {
                     <ul className="edu-animate" style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', opacity: 0.8 }}>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Won a 35k grant for the EyesOnWheels project.
+                            Secured a ₹35K research and development grant to fund the EyesOnWheels project.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
