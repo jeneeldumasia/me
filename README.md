@@ -1,10 +1,10 @@
-# Jeneel Dumasia
+# Hi, I'm Jeneel.
 
-**Jr SRE at IAMOPS | Cloud & DevOps Engineer**
+I'm a **Junior Site Reliability Engineer** at IAMOPS.
 
-I am a Jr Site Reliability Engineer at IAMOPS and a Computer Science graduate (BTech CSE '26) from P. P. Savani University, Surat. I am deeply passionate about how systems work under the hood, specializing in Linux, networking, cloud infrastructure, and system design. 
+I'm passionate about Linux, networking, cloud infrastructure, observability, and distributed systems. At IAMOPS, I work in the NOC, monitoring production environments, responding to incidents, and supporting reliable infrastructure for client systems.
 
-As a NOC primary, I handle real-time monitoring, alert triaging, and incident management in production environments, ensuring 24x7 operational continuity and high availability for cloud architectures.
+I'm always looking to deepen my understanding of how large-scale systems are built, operated, and kept reliable.
 
 ## Core Competencies
 - **Cloud & Infrastructure:** AWS, GCP, Linux, Git & GitHub

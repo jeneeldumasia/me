@@ -43,11 +43,10 @@ export const About: React.FC = () => {
                             marginBottom: '10vh'
                         }}
                     >
-                        Hi, I’m Jeneel.<br></br>
-                        Jr SRE at IAMOPS.<br></br>
-                        I’m passionate about how systems work under the hood — Linux, networking, cloud infrastructure, and system design.<br></br>
-                        At IAMOPS, I’m part of the NOC team, gaining hands-on exposure to client infrastructure and system monitoring.<br></br>
-                        Still learning. Always improving.
+                        Hi, I'm Jeneel.<br></br><br></br>
+                        I'm a Junior Site Reliability Engineer at IAMOPS.<br></br><br></br>
+                        I'm passionate about Linux, networking, cloud infrastructure, observability, and distributed systems. At IAMOPS, I work in the NOC, monitoring production environments, responding to incidents, and supporting reliable infrastructure for client systems.<br></br><br></br>
+                        I'm always looking to deepen my understanding of how large-scale systems are built, operated, and kept reliable.
                     </p>
                     <a
                         href="/Jeneel_Dumasia_resume.pdf"
