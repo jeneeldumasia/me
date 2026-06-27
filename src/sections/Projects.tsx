@@ -9,7 +9,7 @@ const projects = [
     {
         title: 'EYES ON WHEELS',
         subtitle: 'REAL-TIME DROWSINESS DETECTION',
-        description: 'ML on Raspberry Pi 4 tracking eye-blink patterns and facial expressions to prevent accidents. The project received an approved patent.',
+        description: <>ML on Raspberry Pi 4 tracking eye-blink patterns and facial expressions to prevent accidents. The project received an approved <a href="/EYESONWHEELS_PATENT.pdf#toolbar=0" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-muted)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>patent</a>.</>,
         stack: ['Python', 'OpenCV', 'NumPy', 'SciPy'],
         year: '2025'
     },
