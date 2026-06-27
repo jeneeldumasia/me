@@ -5,7 +5,6 @@ export const Hero: React.FC = () => {
         <section className="section" style={{ padding: 0, justifyContent: 'center' }}>
             <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', padding: 'var(--pad-page)' }}>
                 <header style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', width: '100%', zIndex: 20 }}>
-                    <div className="text-small">BTech CSE '26</div>
                 </header>
 
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 20 }}>
@@ -17,7 +16,7 @@ export const Hero: React.FC = () => {
                     </h1>
                     <div style={{ marginTop: '2rem', maxWidth: '400px', marginLeft: 'auto' }}>
                         <p className="subtitle" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-                            Cloud & DevOps Intern with hands-on experience in architecture design, networking, and incident management as a NOC secondary.
+                            Jr SRE at IAMOPS with hands-on experience in architecture design, networking, and incident management as a NOC primary.
                         </p>
                     </div>
                 </div>

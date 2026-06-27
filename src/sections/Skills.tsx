@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const skillCategories = [
     {
         title: 'LANGUAGES & DATABASES',
-        items: ['Python', 'JavaScript', 'SQL', 'HTML', 'CSS', 'Java']
+        items: ['Python', 'SQL', 'HTML', 'CSS']
     },
     {
         title: 'CLOUD & INFRASTRUCTURE',
@@ -20,7 +20,7 @@ const skillCategories = [
     },
     {
         title: 'FRAMEWORKS & PLATFORMS',
-        items: ['NodeJS', 'Express', 'MongoDB', 'Raspberry Pi']
+        items: ['NodeJS', 'MongoDB', 'Raspberry Pi']
     }
 ];
 

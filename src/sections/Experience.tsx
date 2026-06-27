@@ -57,39 +57,51 @@ export const Experience: React.FC = () => {
                     <h3 className="text-large experience-title" style={{
                         marginBottom: '1rem',
                         fontSize: 'clamp(1.2rem, 2.8vw, 3.2rem)', // Adjusted to prevent collision with the diagram
-                    }}>IAMOPS — Cloud & DevOps Intern</h3>
-                    <div className="text-medium" style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
-                        Jan 2026 – Present · Surat, Gujarat
+                    }}>IAMOPS</h3>
+
+                    {/* Role 1: Jr SRE */}
+                    <h4 className="text-medium" style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>Jr SRE</h4>
+                    <div className="text-small" style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+                        July 2026 – Present · Surat, Gujarat
                     </div>
 
-                    <ul style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '1.5rem', opacity: 0.8 }}>
+                    <ul style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', opacity: 0.8, marginBottom: '2.5rem' }}>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Built a non-production 3-tier cloud architecture, implementing network isolation and load balancing to simulate a high-availability system design.
+                            Served as the primary NOC engineer during assigned shifts, acting as the first responder for production alerts and incidents.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Currently deep diving into AWS services, gaining hands-on experience with cloud infrastructure, networking, and cost optimization.
+                            Performed initial triage using established incident playbooks, collected diagnostic metrics, and resolved issues within the NOC scope.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Designed a multi-location network architecture (2 branches + HQ) as part of a structured task with IP planning and subnet segmentation, and performed DevOps-focused infrastructure analysis on real-world companies to identify scalability challenges and map potential deployment patterns.
+                            Determined when incidents required escalation to OCE and communicated relevant findings to support investigation.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Ranked among Top 10 interns (out of batch) and selected to transition into NOC operations.
+                            Maintained incident timelines, documented shift handovers, and ensured continuity across 24×7 operations.
+                        </li>
+                    </ul>
+
+                    {/* Role 2: Intern */}
+                    <h4 className="text-medium" style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>Cloud & DevOps Intern</h4>
+                    <div className="text-small" style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+                        Jan 2026 – June 2026 · Surat, Gujarat
+                    </div>
+
+                    <ul style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', opacity: 0.8 }}>
+                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
+                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
+                            Built non-production 3-tier cloud architecture with network isolation and load balancing
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Acted as a Secondary responder in incident management, supporting real-time monitoring, alert triaging, and escalation workflows in production environments.
+                            Designed multi-location network (2 branches + HQ) with IP planning and subnet segmentation
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Contributed to shift handovers and operational continuity, ensuring clear communication of system status, incidents, and ongoing actions.
-                        </li>
-                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
-                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Gained exposure to production systems, observability practices, and reliability engineering workflows
+                            Acted as a secondary NOC engineer, assisting with incident response, monitoring, and operational support during high-volume events.
                         </li>
                     </ul>
                 </div>

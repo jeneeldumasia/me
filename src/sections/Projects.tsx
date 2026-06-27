@@ -9,7 +9,7 @@ const projects = [
     {
         title: 'EYES ON WHEELS',
         subtitle: 'REAL-TIME DROWSINESS DETECTION',
-        description: 'ML on Raspberry Pi 4 tracking eye-blink patterns and facial expressions to prevent accidents.',
+        description: 'ML on Raspberry Pi 4 tracking eye-blink patterns and facial expressions to prevent accidents. The project received an approved patent.',
         stack: ['Python', 'OpenCV', 'NumPy', 'SciPy'],
         year: '2025'
     },
@@ -18,13 +18,6 @@ const projects = [
         subtitle: 'STORAGE MANAGEMENT PLATFORM',
         description: 'Inventory tracking, automated billing, invoicing, client management, and data visualization.',
         stack: ['JavaScript', 'HTML/CSS', 'MongoDB', 'NodeJS', 'Express'],
-        year: '2024'
-    },
-    {
-        title: 'KOFFEEBREW',
-        subtitle: 'SOCIAL CAFE DISCOVERY',
-        description: 'Android app for coffee enthusiasts with user profiles and social connection features.',
-        stack: ['Java', 'Android SDK', 'XML'],
         year: '2024'
     }
 ];
@@ -60,7 +53,7 @@ export const Projects: React.FC = () => {
     return (
         <section ref={containerRef} className="section" style={{ padding: 'var(--pad-page) 0', borderTop: '1px solid var(--grid-line)' }}>
             <div style={{ padding: '0 var(--pad-page)', marginBottom: '4rem' }}>
-                <h2 className="text-small">04 / SELECTED WORKS</h2>
+                <h2 className="text-small">05 / SELECTED WORKS</h2>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>

@@ -1,35 +1,14 @@
-# Jeneel Dumasia — Portfolio
+# Jeneel Dumasia
 
-A complete, production-ready portfolio website designed for Jeneel Dumasia, showcasing his work as a Cloud & DevOps Technical Intern.
+**Jr SRE at IAMOPS | Cloud & DevOps Engineer**
 
-## Architecture & Aesthetic Direction
-This portfolio utilizes a **Refined Brutalism / Architectural** design language. 
-Jeneel builds cloud infrastructure—a discipline of structure, load balancing, and raw computational materials. This aesthetic mirrors his work by using raw materials (monochrome, sharp contrasting grids), massive structural typography, and highly precise visual language. It avoids space/cyberpunk tropes to present him as a mature, confident engineer.
+I am a Jr Site Reliability Engineer at IAMOPS and a Computer Science graduate (BTech CSE '26) from P. P. Savani University, Surat. I am deeply passionate about how systems work under the hood, specializing in Linux, networking, cloud infrastructure, and system design. 
 
-The site is built as a highly-performant static single-page application:
-- **Core Framework**: React + TypeScript via Vite
-- **Styling**: Vanilla CSS with structural precision
-- **Animation**: GSAP and Lenis (buttery smooth scrolling)
-- **3D Render**: Three.js + React Three Fiber (architectural icosahedron representing physical to cloud transition)
+As a NOC primary, I handle real-time monitoring, alert triaging, and incident management in production environments, ensuring 24x7 operational continuity and high availability for cloud architectures.
 
-## Setup & Deployment
+## Core Competencies
+- **Cloud & Infrastructure:** AWS, GCP, Linux, Git & GitHub
+- **Languages & Databases:** Python, SQL, HTML, CSS
+- **Frameworks & Platforms:** NodeJS, MongoDB, Raspberry Pi
+- **Computation & ML:** OpenCV, NumPy, SciPy
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-2. **Run locally**:
-   ```bash
-   npm run dev
-   ```
-
-3. **Build for production**:
-   ```bash
-   npm run build
-   ```
-   *This outputs to the `dist/` folder.*
-
-4. **Deploy**:
-   - **Vercel**: Run `vercel --prod` to deploy automatically, or connect your Git repository to Vercel.
-   - **Netlify**: Drag and drop the `dist/` folder onto the Netlify UI, or connect via Git.
