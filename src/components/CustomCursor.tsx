@@ -1,11 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 export const CustomCursor: React.FC = () => {
     const cursorRef = useRef<HTMLDivElement>(null);
     const followerRef = useRef<HTMLDivElement>(null);
+    const [enabled, setEnabled] = useState(false);
 
     useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const hasPointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        if (!hasPointer) return;
+        setEnabled(true);
+
         const cursor = cursorRef.current;
         const follower = followerRef.current;
         if (!cursor || !follower) return;
@@ -45,7 +51,6 @@ export const CustomCursor: React.FC = () => {
 
         window.addEventListener('mousemove', onMouseMove);
 
-        // Attach hover effects to links and interactive elements
         const attachHoverEvents = () => {
             const links = document.querySelectorAll('a, button, .magnetic, [role="button"]');
             links.forEach((link) => {
@@ -54,10 +59,10 @@ export const CustomCursor: React.FC = () => {
             });
         };
 
-        // Need a slight delay or observer to catch newly rendered React elements
-        setTimeout(attachHoverEvents, 1000);
+        const timer = setTimeout(attachHoverEvents, 800);
 
         return () => {
+            clearTimeout(timer);
             window.removeEventListener('mousemove', onMouseMove);
             const links = document.querySelectorAll('a, button, .magnetic, [role="button"]');
             links.forEach((link) => {
@@ -66,6 +71,8 @@ export const CustomCursor: React.FC = () => {
             });
         };
     }, []);
+
+    if (!enabled) return null;
 
     return (
         <>
@@ -98,7 +105,6 @@ export const CustomCursor: React.FC = () => {
                     transform: 'translate(-50%, -50%)',
                     pointerEvents: 'none',
                     zIndex: 9998,
-                    // mixBlendMode: 'difference'
                 }}
             />
         </>

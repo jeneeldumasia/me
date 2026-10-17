@@ -5,6 +5,13 @@ export const Loader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => 
     const [index, setIndex] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLHeadingElement>(null);
+    const completedRef = useRef(false);
+
+    const safeComplete = () => {
+        if (completedRef.current) return;
+        completedRef.current = true;
+        onComplete();
+    };
 
     const greetings = [
         "Hello",
@@ -17,34 +24,64 @@ export const Loader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => 
     ];
 
     useEffect(() => {
-        if (index === greetings.length - 1) {
-            // End of sequence, wait a bit on the name then animate out
-            if (textRef.current) {
-                gsap.to(textRef.current, { opacity: 1, duration: 0.6, ease: 'power2.out' });
-            }
-
-            setTimeout(() => {
-                if (containerRef.current) {
-                    gsap.to(containerRef.current, {
-                        yPercent: -100,
-                        duration: 1.0,
-                        ease: 'expo.inOut',
-                        onComplete
-                    });
-                }
-            }, 900); // stay on final text for 0.9s
+        // Respect prefers-reduced-motion
+        if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            safeComplete();
             return;
         }
 
-        // Cycle through greetings
-        if (textRef.current) {
-            const tl = gsap.timeline();
-            tl.to(textRef.current, { opacity: 1, duration: 0.2 })
-              .to(textRef.current, { opacity: 0, duration: 0.2, delay: 0.15, onComplete: () => {
-                  setIndex(prev => prev + 1);
-              }});
+        // Hard safety timeout: loader will NEVER block page for more than 2.8s
+        const safetyTimer = setTimeout(() => {
+            if (containerRef.current) {
+                gsap.to(containerRef.current, {
+                    yPercent: -100,
+                    duration: 0.5,
+                    ease: 'power2.inOut',
+                    onComplete: safeComplete
+                });
+            } else {
+                safeComplete();
+            }
+        }, 2800);
+
+        return () => clearTimeout(safetyTimer);
+    }, []);
+
+    useEffect(() => {
+        if (completedRef.current) return;
+
+        if (index === greetings.length - 1) {
+            if (textRef.current) {
+                gsap.to(textRef.current, { opacity: 1, duration: 0.3, ease: 'power2.out' });
+            }
+
+            const exitTimer = setTimeout(() => {
+                if (containerRef.current) {
+                    gsap.to(containerRef.current, {
+                        yPercent: -100,
+                        duration: 0.8,
+                        ease: 'expo.inOut',
+                        onComplete: safeComplete
+                    });
+                } else {
+                    safeComplete();
+                }
+            }, 600);
+
+            return () => clearTimeout(exitTimer);
         }
-    }, [index, onComplete, greetings.length]);
+
+        if (textRef.current) {
+            const ctx = gsap.context(() => {
+                const tl = gsap.timeline();
+                tl.to(textRef.current, { opacity: 1, duration: 0.14 })
+                  .to(textRef.current, { opacity: 0, duration: 0.14, delay: 0.08, onComplete: () => {
+                      setIndex(prev => prev + 1);
+                  }});
+            });
+            return () => ctx.revert();
+        }
+    }, [index]);
 
     return (
         <div
@@ -73,8 +110,9 @@ export const Loader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => 
                    gap: '12px'
                }}
             >
-                {/* Optional dot indicator like Apple occasionally pairs with language changes */}
-                {index < greetings.length - 1 && <span style={{display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--text-main)'}}></span>}
+                {index < greetings.length - 1 && (
+                    <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--text-main)' }} />
+                )}
                 {greetings[index]}
             </h1>
         </div>

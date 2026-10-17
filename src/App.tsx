@@ -6,6 +6,7 @@ import { SmoothScroll } from './components/SmoothScroll';
 import { Loader } from './components/Loader';
 import { Scene } from './components/Scene';
 import { ThemeToggle } from './components/ThemeToggle';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
@@ -22,23 +23,34 @@ gsap.registerPlugin(ScrollTrigger);
 const App: React.FC = () => {
     const [loadingComplete, setLoadingComplete] = useState(false);
 
+    // Fallback safety timeout so page is NEVER trapped in invisible state
+    useEffect(() => {
+        const fallback = setTimeout(() => {
+            setLoadingComplete(true);
+        }, 3200);
+        return () => clearTimeout(fallback);
+    }, []);
+
     useEffect(() => {
         if (loadingComplete) {
-            // Entry animations after loader finishes
-            const tl = gsap.timeline();
+            const ctx = gsap.context(() => {
+                const tl = gsap.timeline();
 
-            tl.to('.title-line', {
-                y: 0,
-                duration: 1.5,
-                ease: 'power4.out',
-                stagger: 0.2
-            })
+                tl.to('.title-line', {
+                    y: 0,
+                    duration: 1.2,
+                    ease: 'power4.out',
+                    stagger: 0.15
+                })
                 .to('.subtitle', {
                     y: 0,
                     opacity: 1,
-                    duration: 1,
+                    duration: 0.8,
                     ease: 'power3.out'
-                }, '-=1');
+                }, '-=0.8');
+            });
+
+            return () => ctx.revert();
         }
     }, [loadingComplete]);
 
@@ -48,11 +60,19 @@ const App: React.FC = () => {
             <ThemeToggle />
             {!loadingComplete && <Loader onComplete={() => setLoadingComplete(true)} />}
 
-            <div id="webgl-container" style={{ opacity: loadingComplete ? 1 : 0, transition: 'opacity 2s ease' }}>
-                <Scene />
+            <div id="webgl-container" style={{ opacity: loadingComplete ? 1 : 0, transition: 'opacity 1.5s ease' }}>
+                <ErrorBoundary>
+                    <Scene />
+                </ErrorBoundary>
             </div>
 
-            <main style={{ position: 'relative', zIndex: 10, visibility: loadingComplete ? 'visible' : 'hidden' }}>
+            <main style={{
+                position: 'relative',
+                zIndex: 10,
+                opacity: loadingComplete ? 1 : 0,
+                transition: 'opacity 0.6s ease',
+                pointerEvents: loadingComplete ? 'auto' : 'none'
+            }}>
                 <Hero />
                 <About />
                 <Skills />

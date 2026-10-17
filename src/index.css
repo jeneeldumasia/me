@@ -44,8 +44,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
-  /* We use a custom cursor */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none;
+  }
 }
 
 body {
@@ -249,5 +253,23 @@ h6 {
     flex-direction: column !important;
     align-items: center !important;
     gap: 1rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .title-line {
+    transform: none !important;
+  }
+
+  .subtitle {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
