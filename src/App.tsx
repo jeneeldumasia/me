@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CustomCursor } from './components/CustomCursor';
 import { SmoothScroll } from './components/SmoothScroll';
 import { Loader } from './components/Loader';
-import { Scene } from './components/Scene';
+// three.js is most of the bundle; load the 3D background separately so the
+// text content isn't blocked on it.
+const Scene = lazy(() => import('./components/Scene').then(m => ({ default: m.Scene })));
 import { ThemeToggle } from './components/ThemeToggle';
 import { ErrorBoundary } from './components/ErrorBoundary';
 
@@ -62,7 +64,9 @@ const App: React.FC = () => {
 
             <div id="webgl-container" style={{ opacity: loadingComplete ? 1 : 0, transition: 'opacity 1.5s ease' }}>
                 <ErrorBoundary>
-                    <Scene />
+                    <Suspense fallback={null}>
+                        <Scene />
+                    </Suspense>
                 </ErrorBoundary>
             </div>
 
