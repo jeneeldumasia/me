@@ -29,7 +29,7 @@ export const ThemeToggle: React.FC = () => {
                         background: 'transparent',
                         border: 'none',
                         color: 'var(--text-main)',
-                        cursor: 'none', // Handled by CustomCursor
+                        cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
