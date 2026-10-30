@@ -28,8 +28,9 @@ export const CustomCursor: React.FC = () => {
         let shown = false;
         gsap.set([cursor, follower], { xPercent: -50, yPercent: -50 });
 
-        const moveDot = gsap.quickTo(cursor, 'x', { duration: 0 });
-        const moveDotY = gsap.quickTo(cursor, 'y', { duration: 0 });
+        // The dot follows instantly (a setter); quickTo with duration 0 doesn't re-render.
+        const moveDot = gsap.quickSetter(cursor, 'x', 'px') as (v: number) => void;
+        const moveDotY = gsap.quickSetter(cursor, 'y', 'px') as (v: number) => void;
         const moveRing = gsap.quickTo(follower, 'x', { duration: 0.6, ease: 'power3.out' });
         const moveRingY = gsap.quickTo(follower, 'y', { duration: 0.6, ease: 'power3.out' });
 
