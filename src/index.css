@@ -46,10 +46,12 @@
   box-sizing: border-box;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  * {
-    cursor: none;
-  }
+/* Hide the native cursor only while the custom cursor is active (CustomCursor
+   adds this class after it starts tracking the mouse). Hiding it unconditionally
+   left desktop visitors with no cursor whenever the custom one failed. */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
 }
 
 body {

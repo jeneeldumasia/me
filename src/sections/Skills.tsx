@@ -85,8 +85,7 @@ export const Skills: React.FC = () => {
                                             borderRadius: '4px',
                                             fontSize: '1.1rem',
                                             background: 'rgba(255,255,255,0.02)',
-                                            backdropFilter: 'blur(10px)',
-                                            cursor: 'none'
+                                            backdropFilter: 'blur(10px)'
                                         }}
                                     >
                                         {skill}
