@@ -7,20 +7,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const skillCategories = [
     {
-        title: 'LANGUAGES & DATABASES',
-        items: ['Python', 'SQL', 'HTML', 'CSS']
+        title: 'CLOUD',
+        items: ['AWS (EC2, ECS, S3, EFS, VPC, Route 53)', 'GCP (Cloud Run, Cloud SQL, Pub/Sub, VPC)']
     },
     {
-        title: 'CLOUD & INFRASTRUCTURE',
-        items: ['AWS', 'GCP', 'Linux', 'Git & GitHub']
+        title: 'CONTAINERS',
+        items: ['Docker', 'Docker Compose', 'Kubernetes (basic)']
     },
     {
-        title: 'COMPUTATION & ML',
-        items: ['OpenCV', 'NumPy', 'SciPy']
+        title: 'INFRASTRUCTURE & CI/CD',
+        items: ['Terraform', 'GitHub Actions', 'Git']
     },
     {
-        title: 'FRAMEWORKS & PLATFORMS',
-        items: ['NodeJS', 'MongoDB', 'Raspberry Pi']
+        title: 'MONITORING',
+        items: ['Grafana', 'Prometheus', 'Loki', 'New Relic']
+    },
+    {
+        title: 'SCRIPTING & DATABASES',
+        items: ['Python', 'Bash', 'SQL', 'PostgreSQL']
+    },
+    {
+        title: 'LINUX & NETWORKING',
+        items: ['Linux', 'DNS', 'TCP/IP', 'Load Balancing']
     }
 ];
 

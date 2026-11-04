@@ -44,9 +44,8 @@ export const About: React.FC = () => {
                         }}
                     >
                         Hi, I'm Jeneel.<br></br><br></br>
-                        I'm a Junior Site Reliability Engineer at IAMOPS.<br></br><br></br>
-                        I'm passionate about Linux, networking, cloud infrastructure, observability, and distributed systems. At IAMOPS, I work in the NOC, monitoring production environments, responding to incidents, and supporting reliable infrastructure for client systems.<br></br><br></br>
-                        I'm always looking to deepen my understanding of how large-scale systems are built, operated, and kept reliable.
+                        I'm a Junior Site Reliability Engineer at IAMOPS, handling monitoring, incident response, and root cause analysis for production cloud services across 7 clients.<br></br><br></br>
+                        I built Housefull, a containerized booking platform on Google Cloud, with Terraform and GitHub Actions.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                         <a
