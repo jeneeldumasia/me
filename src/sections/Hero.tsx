@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
                     </h1>
                     <div style={{ marginTop: '2rem', maxWidth: '400px', marginLeft: 'auto' }}>
                         <p className="subtitle" style={{ opacity: 0, transform: 'translateY(20px)', willChange: 'transform, opacity' }}>
-                            Jr SRE at IAMOPS with hands-on experience in architecture design, networking, and incident management as a NOC primary.
+                            Jr SRE at IAMOPS, handling monitoring, incident response, and root cause analysis for production cloud services across 7 clients.
                         </p>
                     </div>
                 </div>

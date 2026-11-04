@@ -68,24 +68,24 @@ export const Experience: React.FC = () => {
                     <ul style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', opacity: 0.8, marginBottom: '2.5rem' }}>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Served as the primary NOC engineer during assigned shifts, acting as the first responder for production alerts and incidents.
+                            Diagnosed a sudden traffic drop by checking metrics along the request path, and found steadily rising memory on an internal ECS service that led developers to a memory leak.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Performed initial triage using established incident playbooks, collected diagnostic metrics, and resolved issues within the NOC scope.
+                            Triage around 20 alerts per shift, and up to 96 during a deployment, across 7 clients using Grafana and New Relic, escalating by severity and runbook.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Determined when incidents required escalation to OCE and communicated relevant findings to support investigation.
+                            Coordinate with on-call engineers during incidents, keeping teams updated and giving clear handoffs.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Maintained incident timelines, documented shift handovers, and ensured continuity across 24×7 operations.
+                            Write root cause analyses that identify recurring failures and the steps to prevent them, and report incident and MTTR trends for reliability reviews.
                         </li>
                     </ul>
 
                     {/* Role 2: Intern */}
-                    <h4 className="text-medium" style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>Cloud & DevOps Intern</h4>
+                    <h4 className="text-medium" style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>Technical Intern</h4>
                     <div className="text-small" style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
                         Jan 2026 – June 2026 · Surat, Gujarat
                     </div>
@@ -93,15 +93,19 @@ export const Experience: React.FC = () => {
                     <ul style={{ listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', opacity: 0.8 }}>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Built non-production 3-tier cloud architecture with network isolation and load balancing
+                            Deployed a 3-tier application on AWS, with application servers in private subnets behind a public Application Load Balancer.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Designed multi-location network (2 branches + HQ) with IP planning and subnet segmentation
+                            Ran containerized services on Amazon ECS and EC2, with S3 and EFS for storage and Route 53 for DNS.
                         </li>
                         <li style={{ position: 'relative', paddingLeft: '2rem' }}>
                             <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
-                            Acted as a secondary NOC engineer, assisting with incident response, monitoring, and operational support during high-volume events.
+                            Set up a custom VPC with subnets, route tables, a NAT Gateway, and security groups to control access between services.
+                        </li>
+                        <li style={{ position: 'relative', paddingLeft: '2rem' }}>
+                            <span style={{ position: 'absolute', left: 0, top: '10px', width: '10px', height: '1px', backgroundColor: 'var(--accent)' }}></span>
+                            Deployed across multiple Availability Zones for high availability, and monitored costs with AWS Cost Explorer.
                         </li>
                     </ul>
                 </div>
