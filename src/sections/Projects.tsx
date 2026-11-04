@@ -7,6 +7,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
     {
+        title: 'HOUSEFULL',
+        subtitle: 'EVENT TICKETING ON GOOGLE CLOUD',
+        description: <>Ticket booking built for the moment sales open and everyone arrives at once. Seats are locked in a database transaction and confirmed through Pub/Sub, and a load test at 100 requests a second ran with zero failures and zero double-bookings. Deployed with Terraform and GitHub Actions, with canary releases and automatic rollback. <a href="https://housefull.jeneeldumasia.dev" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-muted)'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>Live site</a>.</>,
+        stack: ['Python', 'FastAPI', 'PostgreSQL', 'GCP', 'Terraform'],
+        year: '2026'
+    },
+    {
         title: 'SHIPZEN',
         subtitle: 'SELF-HOSTED DEPLOYMENT PLATFORM',
         description: 'Turns any GitHub repository into a live Kubernetes deployment. Custom reconciliation loop handles container builds, pod scheduling, and autoscaling — with real-time build logs and environment variable management through a unified dashboard.',
